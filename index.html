@@ -7,10 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="bg-music" autoplay loop>
-        <source src="music.mp3" type="audio/mp3">
+    <audio id="background-music" autoplay loop>
+        <source src="your-music-file.mp3" type="audio/mp3">
     </audio>
+    
     <button onclick="toggleMusic()" class="music-btn">🔊 Toggle Music</button>
+    
+    <script>
+        const audio = document.getElementById("background-music");
+    
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    
+        // Ensure autoplay works by muting first (optional)
+        window.addEventListener("load", () => {
+            audio.muted = true; // Start muted to avoid browser autoplay restrictions
+            audio.play();
+            setTimeout(() => {
+                audio.muted = false; // Unmute after a short delay
+            }, 1000);
+        });
+    </script>    
     
 
     <div class="container">
