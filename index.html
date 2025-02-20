@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>You're Invited!</h1>
+        <p>Join us for a special event</p>
+        <h2>Wedding of Alex & Emma</h2>
+        <p>Date: March 15, 2025</p>
+        <p>Time: 5:00 PM</p>
+        <p>Location: Grand Ballroom, New York</p>
+        <a href="#rsvp" class="rsvp-btn">RSVP Now</a>
+        
+        <div id="countdown"></div>
+    </div>
+
+    <div class="rsvp-section" id="rsvp">
+        <h2>RSVP Here</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
