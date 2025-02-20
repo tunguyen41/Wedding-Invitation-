@@ -19,3 +19,37 @@ const countdownFunction = setInterval(() => {
     document.getElementById("countdown").innerHTML = 
         `<h3>Countdown to Event: ${days}d ${hours}h ${minutes}m ${seconds}s</h3>`;
 }, 1000);
+
+function toggleMusic() {
+    const music = document.getElementById("bg-music");
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slider img");
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+            slide.classList.add("active");
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Show the first slide initially
+showSlide(currentSlide);
